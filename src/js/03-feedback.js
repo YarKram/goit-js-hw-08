@@ -19,7 +19,6 @@ function onFormInput(evt) {
 
   const inputItems = JSON.stringify(formData);
   localStorage.setItem(INPUT_KEY, inputItems);
-  console.log(formData);
 }
 
 pageUpdate();
@@ -38,7 +37,7 @@ function onFormSubmit(evt) {
   if (refs.email.value === '' || refs.message.value === '') {
     alert('Please fill in all the fields!');
   } else {
-    console.log('Form submitted');
+    console.log(JSON.parse(localStorage.getItem(INPUT_KEY)));
     localStorage.removeItem(INPUT_KEY);
     refs.form.reset();
   }
